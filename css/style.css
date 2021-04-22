@@ -93,6 +93,7 @@ h1 {
     padding-left: 30px;
     max-width: 90%;
     cursor: pointer;
+    word-wrap: anywhere;
 }
 
 .app_todos-item .text::before {

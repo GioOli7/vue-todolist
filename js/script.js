@@ -75,6 +75,8 @@ const app = new Vue({
                 // e la "modalità modifica" viene chiusa.
                 this.todos[index].text = this.todos[index].inputEditTask;
                 this.todos[index].isEditing = false;
+                // in questo modo posso salvare la modifica sia ricliccando sull'icona
+                // e sia premendo il tasto invio dalla tastiera (funzione confirmEditTask(index))
             }
             
         },

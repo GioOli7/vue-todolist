@@ -124,3 +124,10 @@ h1 {
     outline: none;
     width: 80%;
 }
+
+.todos-blank {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    padding: 40px 0;
+}

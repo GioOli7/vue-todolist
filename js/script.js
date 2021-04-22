@@ -67,7 +67,7 @@ const app = new Vue({
             // se la "modalità modifica" è disabilitata, viene abilitata e il testo della task
             // viene copiata nella input, pronta per la modifica
             if (this.todos[index].isEditing === false) {
-                this.todos[index].isEditing = ! this.todos[index].isEditing;
+                this.todos[index].isEditing = ! true;
                 this.todos[index].inputEditTask = this.todos[index].text;
                 // altrimenti se si è già in modifica, il testo della input diventa il testo della task
                 // e la "modalità modifica" viene chiusa.

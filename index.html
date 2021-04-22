@@ -35,7 +35,8 @@
         </div>
         
         <!-- list todo-->
-        <ul class="app_todos">
+        <ul class="app_todos"
+        v-if="todos.length > 0">
 
             <!-- list item -->
             <li class="app_todos-item"
@@ -68,6 +69,9 @@
 
             </li>
         </ul>
+        <p class="todos-blank" v-else>
+            Non hai impegni in sospeso. Aggiungine qualcuno
+        </p>
         
         
 

@@ -22,7 +22,7 @@ const app = new Vue({
             },
             {
                 text: 'Pulire casa',
-                completed: true,
+                completed: false,
                 isEditing: false,
                 inputEditTask: '',
             },

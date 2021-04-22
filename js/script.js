@@ -5,8 +5,8 @@ const app = new Vue({
             {
                 text: 'Comprare il pane',
                 completed: false,
-                isEditing: false,
-                inputEditTask: '',
+                isEditing: false,   // mi permette di verificare se sono in "modalità editing" della task
+                inputEditTask: '',  // testo che proviene dagli input di editing della singola task
             },
             {
                 text: 'Chiamare il sindacalista',
@@ -27,6 +27,7 @@ const app = new Vue({
                 inputEditTask: '',
             },
         ],
+        // input text principale
         inputText: '',        
     },
     methods: {
@@ -42,7 +43,7 @@ const app = new Vue({
                     inputEditTask: '',
                 })
             }
-            this.inputText = '';
+            this.inputText = '';  //ripulisco il text input
             this.$refs.input.focus(); // riporto il focus sulla input
         },
 
@@ -57,6 +58,7 @@ const app = new Vue({
          * toggle between completed and uncompleted task
          */
         taskDone(index) {
+            // switcho tra task completa ed incompleta
             this.todos[index].completed = ! this.todos[index].completed;
         },
 

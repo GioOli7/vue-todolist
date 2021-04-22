@@ -25,17 +25,16 @@
         <div class="user_input">
 
             <!-- input text -->
-            <input v-model.trim="inputText" 
-            v-on:keyup.enter="addItem"
-            ref="input"
-            type="text" name="input" id="input">
+            <input type="text" name="input" id="input" 
+            v-model.trim="inputText" v-on:keyup.enter="addItem" ref="input">
 
             <!-- add button -->
             <button @click="addItem" class="btnAdd">Aggiungi</button>
+
         </div>
         
         <!-- list todo-->
-        <ul class="app_todos"
+        <ul class="app_todos" 
         v-if="todos.length > 0">
 
             <!-- list item -->
@@ -44,26 +43,19 @@
 
                 <!-- text -->
                 <span class="text"
-                :class="{done: item.completed}"
-                @click="taskDone(index)"
-                v-show="!item.isEditing">
+                :class="{done: item.completed}" @click="taskDone(index)" v-show="!item.isEditing">
                     {{ item.text }}
                 </span>
                 <!-- input edit task -->
-                <input type="text"
-                class="inputEditTask"
-                ref="editText"
-                v-show="item.isEditing"
-                v-model="item.inputEditTask"
-                v-on:keyup.enter="confirmEditTask(index)">
+                <input type="text" class="inputEditTask"
+                ref="editText" v-show="item.isEditing" v-model="item.inputEditTask" v-on:keyup.enter="confirmEditTask(index)">
 
                 <div class="actions">
                     <!-- edit icon -->
                     <i class="far fa-edit edit-icon"
                     @click="editTask(index)"></i>
                     <!-- delete icon -->
-                    <i class="fas fa-trash delete-icon"
-                    id="delete"
+                    <i class="fas fa-trash delete-icon" id="delete"
                     @click="deleteItem(index)"></i>
                 </div>
 
@@ -72,29 +64,8 @@
         <p class="todos-blank" v-else>
             Non hai impegni in sospeso. Aggiungine qualcuno
         </p>
-        
-        
-
-
-
-
-
-
-
-
-
-
-
     </div>
 
-    <!-- <div>
-            <li class="app_todos-item">
-                 <span class="text"></span>
-            <i class="fas fa-trash delete-icon"></i>
-        </li>
-    </div> -->
-    
-    
     <!-- js -->
     <script src="./js/script.js"></script>
 </body>

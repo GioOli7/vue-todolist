@@ -110,11 +110,13 @@ h1 {
     background-color: lightgray;
 }
 
+/* classe che si applica alle task completate */
 .app_todos-item .text.done {
     text-decoration: line-through;
     color: #aaa;
 }
 
+/* input che appare in "modalità modifica" */
 .inputEditTask {
     background-color: #e53c3c;
     color: #fff;
@@ -126,6 +128,7 @@ h1 {
     width: 80%;
 }
 
+/* stile testo che appare quando non ci sono più task */
 .todos-blank {
     text-align: center;
     color: white;

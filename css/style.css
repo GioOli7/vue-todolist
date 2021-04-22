@@ -17,7 +17,6 @@ h1 {
     width: 700px;
     margin: 50px auto;
     padding: 20px;
-    text-align: center;
     background-color: rgba(0, 0, 0, 0.1);
 }
 
@@ -68,6 +67,7 @@ h1 {
 }
 
 .app_todos-item {
+    position: relative;
     display: flex;
     justify-content: space-between;
     padding: 10px 0;
@@ -81,7 +81,22 @@ h1 {
 }
 
 .app_todos-item .text {
+    padding-left: 30px;
     cursor: pointer;
+}
+
+.app_todos-item .text::before {
+    content: '';
+    position: absolute;
+    border: 1px solid white;
+    left: 0;
+    height: 10px;
+    width: 10px;
+    top: 13px;
+}
+
+.app_todos-item .text.done:before {
+    background-color: lightgray;
 }
 
 .app_todos-item .text.done {

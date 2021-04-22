@@ -42,7 +42,9 @@
             v-for="(item, index) in todos">
 
                 <!-- text -->
-                <span class="text">
+                <span class="text"
+                :class="{done: item.completed}"
+                @click="taskDone(index)">
                     {{ item.text }}
                 </span>
                 <!-- delete icon -->

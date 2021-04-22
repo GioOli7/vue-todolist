@@ -16,7 +16,7 @@ const app = new Vue({
             },
             {
                 text: 'Pulire casa',
-                completed: false,
+                completed: true,
             },
         ],
         inputText: '',
@@ -42,7 +42,10 @@ const app = new Vue({
          */
         deleteItem(index) {
             this.todos.splice(index, 1);
-        }
+        },
 
+        taskDone(index) {
+            this.todos[index].completed = ! this.todos[index].completed;
+        }
     }
 })

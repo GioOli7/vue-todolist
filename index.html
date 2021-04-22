@@ -25,7 +25,10 @@
         <div class="user_input">
 
             <!-- input text -->
-            <input v-model.trim="inputText" type="text" name="input" id="input">
+            <input v-model.trim="inputText" 
+            v-on:keyup.enter="addItem"
+            ref="input"
+            type="text" name="input" id="input">
 
             <!-- add button -->
             <button @click="addItem" class="btnAdd">Aggiungi</button>
@@ -39,10 +42,13 @@
             v-for="(item, index) in todos">
 
                 <!-- text -->
-                <span class="text">{{ item.text }}</span>
+                <span class="text">
+                    {{ item.text }}
+                </span>
                 <!-- delete icon -->
                 <i class="fas fa-trash delete-icon"
-                id="delete"></i>
+                id="delete"
+                @click="deleteItem(index)"></i>
 
             </li>
         </ul>

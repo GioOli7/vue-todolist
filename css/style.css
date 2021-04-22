@@ -55,16 +55,13 @@ h1 {
     font-weight: bold;
     transition: background-color 0.3s;
     cursor: pointer;
+    outline: none;
 }
 
-.btnAdd:hover {
+.btnAdd:hover,
+.btnAdd:focus {
     background-color: #fff;
 }
-
-.btnAdd:focus {
-    border: 2px solid red;
-}
-
 
 .app_todos {
     list-style: none;

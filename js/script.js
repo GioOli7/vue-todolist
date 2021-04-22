@@ -39,6 +39,7 @@ const app = new Vue({
                     text: this.inputText,
                     completed: false,
                     isEditing: false,
+                    inputEditTask: '',
                 })
             }
             this.inputText = '';

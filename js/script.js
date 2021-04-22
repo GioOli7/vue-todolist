@@ -61,6 +61,9 @@ const app = new Vue({
             this.todos[index].completed = ! this.todos[index].completed;
         },
 
+        /**
+         * Allow editing task from icon click
+         */
         editTask(index) {
             if (this.todos[index].isEditing === false) {
                 this.todos[index].isEditing = ! this.todos[index].isEditing;
@@ -71,6 +74,10 @@ const app = new Vue({
             }
             
         },
+
+        /**
+         * Confirm editing task from enter key
+         */
         confirmEditTask(index) {
             this.todos[index].text = this.todos[index].inputEditTask;
             this.todos[index].isEditing = false;

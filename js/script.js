@@ -27,9 +27,7 @@ const app = new Vue({
                 inputEditTask: '',
             },
         ],
-        inputText: '',
-        isEditing: false,
-        
+        inputText: '',        
     },
     methods: {
         /**

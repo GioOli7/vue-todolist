@@ -69,21 +69,29 @@ const app = new Vue({
             if (this.todos[index].isEditing === false) {
                 this.todos[index].isEditing = ! this.todos[index].isEditing;
                 this.todos[index].inputEditTask = this.todos[index].text;
-            } else {
                 // altrimenti se si è già in modifica, il testo della input diventa il testo della task
                 // e la "modalità modifica" viene chiusa.
+            } else {
+                // prevengo che venga salvata una task senza testo
+                if (this.todos[index].inputEditTask == '') {
+                    this.todos[index].inputEditTask = this.todos[index].text;
+                }
                 this.todos[index].text = this.todos[index].inputEditTask;
                 this.todos[index].isEditing = false;
                 // in questo modo posso salvare la modifica sia ricliccando sull'icona
                 // e sia premendo il tasto invio dalla tastiera (funzione confirmEditTask(index))
             }
-            
+        
         },
 
         /**
          * Confirm editing task from enter key
          */
         confirmEditTask(index) {
+            // prevengo che venga salvata una task senza testo
+            if (this.todos[index].inputEditTask == '') {
+                this.todos[index].inputEditTask = this.todos[index].text;
+            }
             // il testo della input diventa il testo della task
             // e la "modalità modifica" viene chiusa.
             this.todos[index].text = this.todos[index].inputEditTask;

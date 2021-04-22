@@ -80,8 +80,18 @@ h1 {
     transition: color 0.2s;
 }
 
+.app_todos-item .edit-icon{
+    margin-right: 10px;
+}
+
+.app_todos-item .edit-icon:hover {
+    color: rgb(60, 246, 255);
+    cursor: pointer;
+}
+
 .app_todos-item .text {
     padding-left: 30px;
+    max-width: 90%;
     cursor: pointer;
 }
 
@@ -102,4 +112,15 @@ h1 {
 .app_todos-item .text.done {
     text-decoration: line-through;
     color: #aaa;
+}
+
+.inputEditTask {
+    background-color: #e53c3c;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-bottom: 1px solid white;
+    margin-left: 30px;
+    outline: none;
+    width: 80%;
 }

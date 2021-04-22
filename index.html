@@ -44,13 +44,27 @@
                 <!-- text -->
                 <span class="text"
                 :class="{done: item.completed}"
-                @click="taskDone(index)">
+                @click="taskDone(index)"
+                v-show="!item.isEditing">
                     {{ item.text }}
                 </span>
-                <!-- delete icon -->
-                <i class="fas fa-trash delete-icon"
-                id="delete"
-                @click="deleteItem(index)"></i>
+                <!-- input edit task -->
+                <input type="text"
+                class="inputEditTask"
+                ref="editText"
+                v-show="item.isEditing"
+                v-model="item.inputEditTask"
+                v-on:keyup.enter="confirmEditTask(index)">
+
+                <div class="actions">
+                    <!-- edit icon -->
+                    <i class="far fa-edit edit-icon"
+                    @click="editTask(index)"></i>
+                    <!-- delete icon -->
+                    <i class="fas fa-trash delete-icon"
+                    id="delete"
+                    @click="deleteItem(index)"></i>
+                </div>
 
             </li>
         </ul>
